@@ -12,13 +12,11 @@ class MessageList extends Component {
   }
 
   componentDidMount() {
-    // this.refresher = setInterval(this.fetchMessages, 5000);
+    this.refresher = setInterval(this.fetchMessages, 5000);
   }
 
   componentDidUpdate() {
-    console.log(this.list.scrollTop);
     this.list.scrollTop = this.list.scrollHeight;
-    console.log(this.list.scrollTop);
   }
 
   componentWillUnmount() {
