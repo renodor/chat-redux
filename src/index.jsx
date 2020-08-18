@@ -23,7 +23,7 @@ const initialState = {
   messages: [],
   channels: ['general', 'react', 'paris'],
   selectedChannel: 'general',
-  // currentUsername: window.prompt('Please chose your username', 'Username')
+  currentUsername: window.prompt('Please chose your username', 'Username')
 };
 
 const reducers = combineReducers({

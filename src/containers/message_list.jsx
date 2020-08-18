@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { fetchMessages } from '../actions';
 
 import Message from '../components/message';
+import MessageForm from './message_form';
 
 
 class MessageList extends Component {
@@ -22,7 +23,7 @@ class MessageList extends Component {
             key={message.created_at}
           />)
         )}
-        <Message messages={this.props.messages} />
+        <MessageForm />
       </div>
     );
   }
