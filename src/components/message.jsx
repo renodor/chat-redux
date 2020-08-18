@@ -1,11 +1,12 @@
 import React from 'react';
 
 const Message = (props) => {
+  const { author, content, created_at} = props.message
   return (
     <div className="message">
-      <p>{props.author}</p>
-      <p>{props.message}</p>
-      <p>{props.created_at}</p>
+      <p>{author}</p>
+      <p>{content}</p>
+      <p>{created_at}</p>
     </div>
   );
 };

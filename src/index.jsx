@@ -11,9 +11,9 @@ import reduxPromise from 'redux-promise';
 // internal modules
 import App from './components/app';
 import messagesReducer from './reducers/messages_reducer';
-import channelsReducer from './reducers/channels_reducer';
 import selectedChannelReducer from './reducers/selected_channel_reducer';
-import currentUsernameReducer from './reducers/current_username_reducer';
+
+const identityReducer = (state = null) => state;
 
 
 import '../assets/stylesheets/application.scss';
@@ -23,17 +23,17 @@ const initialState = {
   messages: [],
   channels: ['general', 'react', 'paris'],
   selectedChannel: 'general',
-  currentUsername: window.prompt('Please chose your username', 'Username')
+  currentUsername: prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`
 };
 
 const reducers = combineReducers({
   messages: messagesReducer,
-  channels: channelsReducer,
   selectedChannel: selectedChannelReducer,
-  currentUsername: currentUsernameReducer
+  channels: identityReducer,
+  currentUsername: identityReducer,
 });
 
-const middlewares = applyMiddleware(logger, reduxPromise);
+const middlewares = applyMiddleware(reduxPromise, logger);
 const store = createStore(reducers, initialState, middlewares);
 
 
@@ -42,5 +42,5 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('app')
 );

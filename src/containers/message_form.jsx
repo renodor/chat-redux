@@ -15,6 +15,7 @@ class MessageForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.postMessage(this.props.selectedChannel, this.props.currentUsername, this.state.term);
+    this.setState({ term: '' });
   }
 
   render() {
