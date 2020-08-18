@@ -13,6 +13,13 @@ const reducers = combineReducers({
   changeMe: (state = null, action) => state
 });
 
+const initialState = {
+  messages: [],
+  channels: ['general', 'react', 'paris'],
+  selectedChannel: 'general',
+  currentUsername: window.prompt('Please chose your username', 'Username')
+};
+
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={createStore(reducers)}>
