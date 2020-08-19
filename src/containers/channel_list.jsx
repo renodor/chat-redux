@@ -19,9 +19,17 @@ class ChannelList extends Component {
         <div className="chat-title">
           Redux Chat
         </div>
-        <div>
+        <div className="channels">
           {this.props.channels.map((channel) => {
-            return <button key={channel} onClick={() => this.handleClick(channel)} >#{channel}</button>;
+            return (
+              <button
+                key={channel}
+                onClick={() => this.handleClick(channel)}
+                className={channel === this.props.selectedChannel ? 'active' : ''}
+              >
+                #{channel}
+              </button>
+            );
           })}
         </div>
       </div>
