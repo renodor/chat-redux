@@ -14,7 +14,7 @@ function stringToColor(str) { // java String#hashCode
 }
 
 const Message = (props) => {
-  const { author, content, created_at} = props.message;
+  const { author, content, created_at } = props.message;
   const time = new Date(created_at).toLocaleTimeString();
   return (
     <div className="message">
