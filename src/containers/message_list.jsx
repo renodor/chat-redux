@@ -8,7 +8,7 @@ import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
   componentWillMount() {
-    this.fetchMessages();
+    this.props.fetchMessages(this.props.selectedChannel);
   }
 
   componentDidMount() {
@@ -21,10 +21,6 @@ class MessageList extends Component {
 
   componentWillUnmount() {
     clearInterval(this.refresher);
-  }
-
-  fetchMessages = () => {
-    this.props.fetchMessages(this.props.selectedChannel);
   }
 
   render () {
