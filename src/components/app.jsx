@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MessageList from '../containers/message_list';
+import ChannelList from '../containers/channel_list';
 
 const App = () => {
   return (
@@ -8,11 +9,7 @@ const App = () => {
       <div className="nav">
         <img src="../assets/images/logo.svg" alt="" />
       </div>
-      <div className="channels">
-        <div className="chat-title">
-          Redux Chat
-        </div>
-      </div>
+      <ChannelList />
       <MessageList />
     </div>
   );

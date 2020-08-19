@@ -13,10 +13,9 @@ import App from './components/app';
 import messagesReducer from './reducers/messages_reducer';
 import selectedChannelReducer from './reducers/selected_channel_reducer';
 
-const identityReducer = (state = null) => state;
-
-
 import '../assets/stylesheets/application.scss';
+
+const identityReducer = (state = null) => state;
 
 // State and reducers
 const initialState = {
