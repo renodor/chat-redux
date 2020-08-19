@@ -11,6 +11,10 @@ class MessageForm extends Component {
     this.state = { term: '' };
   }
 
+  componentDidMount() {
+    this.input.focus();
+  }
+
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -22,6 +26,7 @@ class MessageForm extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="channel-editor">
         <input
+          ref={(input) => { this.input = input; }}
           type="text"
           value={this.state.term}
           onChange={e => this.setState({ term: e.currentTarget.value })}
